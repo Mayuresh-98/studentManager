@@ -1,0 +1,22 @@
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Build output
+build/
+target/
+bin/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+
+# Maven Wrapper (if added later)
+.mvn/
