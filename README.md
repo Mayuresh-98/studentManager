@@ -1,6 +1,6 @@
 # Student Manager
 
-A Java web application built using Servlets and JSP following the MVC architecture.
+A Java web application built using **Servlets, JSP, JDBC, and PostgreSQL** following the **MVC architecture**. This project was developed to learn the fundamentals of Java web development before moving on to Spring Boot.
 
 ## Features
 
@@ -8,13 +8,20 @@ A Java web application built using Servlets and JSP following the MVC architectu
 - View Students
 - Update Student
 - Delete Student
+- PostgreSQL Database Integration
+- User-friendly Error Messages
+- Flash Success Messages
 
 ## Tech Stack
 
 - Java
-- Servlets
+- Jakarta Servlets
 - JSP
+- JSTL & Expression Language
+- JDBC
+- PostgreSQL
 - Apache Tomcat
+- Maven
 - HTML
 - CSS
 
@@ -23,13 +30,30 @@ A Java web application built using Servlets and JSP following the MVC architectu
 - MVC
 - DAO Pattern
 
-## Current Storage
+## Current Learning
 
-- In-memory ArrayList
+This project helped me understand:
 
-## Future Improvements
+- Servlet Lifecycle
+- Request & Response Handling
+- RequestDispatcher (Forward)
+- Send Redirect
+- Form Handling
+- JSP & Expression Language
+- JSTL Core Tags
+- JDBC
+- DAO Pattern
+- MVC Architecture
+- Exception Handling
+- Session vs Request Scope
 
-- JDBC + MySQL
-- JSTL & Expression Language
+## Coming Next
+
+After completing this project, I will continue learning:
+
+- Servlet Filters
+- Listeners
 - Session Management
-- Authentication
+- Cookies
+- Java Web Security Basics
+- Spring Boot

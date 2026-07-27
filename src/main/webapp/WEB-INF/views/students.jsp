@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-<%@ page import="java.util.List"%>
-<%@ page import="com.studentmanager.model.Student"%>
-
-<%
-List<Student> students = (List<Student>) request.getAttribute("students");
-%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 <!DOCTYPE html>
 <html>
@@ -27,50 +21,64 @@ List<Student> students = (List<Student>) request.getAttribute("students");
 				Go To Home</a>
 		</div>
 
+		<c:if test="${not empty sessionScope.success}">
+			<div class="success-message">${sessionScope.success}</div>
+			<c:remove var="success" scope="session" />
+		</c:if>
 
-		<table>
+		<c:if test="${not empty sessionScope.error}">
+			<div class="error-message">${sessionScope.error}</div>
+			<c:remove var="error" scope="session" />
+		</c:if>
 
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Age</th>
-					<th>Course</th>
-					<th>Edit</th>
-					<th>Delete</th>
-				</tr>
-			</thead>
+		<c:choose>
+			<c:when test="${not empty error}">
+				<!-- Don't show empty message or table -->
+			</c:when>
 
-			<tbody>
+			<c:when test="${empty students }">
+				<div class="empty-msg">
+					<p>No students registered yet.</p>
+				</div>
 
-				<%
-				for (Student student : students) {
-				%>
+			</c:when>
 
-				<tr>
-					<td><%=student.getId()%></td>
-					<td><%=student.getName()%></td>
-					<td><%=student.getEmail()%></td>
-					<td><%=student.getAge()%></td>
-					<td><%=student.getCourse()%></td>
+			<c:otherwise>
+				<table>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Age</th>
+							<th>Course</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
 
-					<td><a class="action-link action-edit"
-						href="<%=request.getContextPath()%>/student/edit?id=<%=student.getId()%>">
-							Edit </a></td>
+					<tbody>
+						<c:forEach var="student" items="${students}">
+							<tr>
+								<td>${student.id}</td>
+								<td>${student.name}</td>
+								<td>${student.email}</td>
+								<td>${student.age}</td>
+								<td>${student.course}</td>
+								<td><a class="action-link action-edit"
+									href="${pageContext.request.contextPath}/student/edit?id=${student.id}">
+										Edit </a></td>
+								<td><a class="action-link action-delete"
+									href="${pageContext.request.contextPath}/student/delete?id=${student.id}">
+										Delete </a></td>
 
-					<td><a class="action-link action-delete"
-						href="<%=request.getContextPath()%>/student/delete?id=<%=student.getId()%>">
-							Delete </a></td>
-				</tr>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</c:otherwise>
+		</c:choose>
 
-				<%
-				}
-				%>
-
-			</tbody>
-
-		</table>
 
 		<a class="action-link"
 			href="${pageContext.request.contextPath}/student/register">
