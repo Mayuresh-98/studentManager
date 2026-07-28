@@ -27,6 +27,11 @@
 				href="${pageContext.request.contextPath}/student/register">
 				Student Register </a>
 		</div>
+		<br>
+		<div>
+			<a class="action-link"
+				href="${pageContext.request.contextPath}/logout"> Click Logout </a>
+		</div>
 
 	</div>
 </body>

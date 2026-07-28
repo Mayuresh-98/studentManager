@@ -1,16 +1,21 @@
 # Student Manager
 
-A Java web application built using **Servlets, JSP, JDBC, and PostgreSQL** following the **MVC architecture**. This project was developed to learn the fundamentals of Java web development before moving on to Spring Boot.
+A Java web application built using **Servlets, JSP, JDBC, and PostgreSQL** following the **MVC architecture**. This project was developed to understand the fundamentals of Java web development before moving on to Spring Boot.
 
 ## Features
 
-- Register Student
-- View Students
-- Update Student
-- Delete Student
+- Student Registration
+- Student Listing
+- Student Update
+- Student Deletion
 - PostgreSQL Database Integration
 - User-friendly Error Messages
 - Flash Success Messages
+- Session-based Login & Logout
+- Authentication Filter
+- Cookie-based Username Remembering
+- Session Timeout
+- Servlet Context & Session Listeners
 
 ## Tech Stack
 
@@ -27,10 +32,11 @@ A Java web application built using **Servlets, JSP, JDBC, and PostgreSQL** follo
 
 ## Architecture
 
-- MVC
+- MVC Architecture
 - DAO Pattern
+- Session-based Authentication
 
-## Current Learning
+## Concepts Learned
 
 This project helped me understand:
 
@@ -45,15 +51,9 @@ This project helped me understand:
 - DAO Pattern
 - MVC Architecture
 - Exception Handling
-- Session vs Request Scope
-
-## Coming Next
-
-After completing this project, I will continue learning:
-
-- Servlet Filters
-- Listeners
+- Request Scope & Session Scope
 - Session Management
 - Cookies
-- Java Web Security Basics
-- Spring Boot
+- Servlet Filters
+- Servlet Listeners
+- Basic Java Web Authentication
